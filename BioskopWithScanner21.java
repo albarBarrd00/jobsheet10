@@ -41,7 +41,6 @@ public class BioskopWithScanner21 {
                         System.out.println("Kursi sudah terisi");
                         continue;
                     }
-                   
 
                     penonton[baris - 1][kolom - 1] = nama;
 
@@ -53,10 +52,21 @@ public class BioskopWithScanner21 {
                     }
                 }
             } else if (menu == 2) {
-
                 for (i = 0; i < penonton.length; i++) {
-                    System.out.println("Penonton pada baris ke- " + (i + 1) + ": " + String.join(", ", penonton[i]));
+                    System.out.print("Penonton pada baris ke- " + (i + 1) + ": ");
+                    for (int j = 0; j < penonton[i].length; j++) {
+                        if (penonton[i][j] == null) {
+                            System.out.print("***");
+                        } else {
+                            System.out.print(penonton[i][j]);
+                        }
+                        if (j < penonton[i].length - 1) {
+                            System.out.print(", ");
+                        }
+                    }
+                    System.out.println();
                 }
+
             } else if (menu == 3) {
                 System.out.println("program selesai");
                 break;
