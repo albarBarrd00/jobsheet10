@@ -1,4 +1,5 @@
 import java.util.Scanner;
+
 /**
  * BioskopWithScanner21
  */
@@ -28,15 +29,19 @@ public class BioskopWithScanner21 {
                     baris = sc.nextInt();
                     System.out.print("Masukkan kolom: ");
                     kolom = sc.nextInt();
+                    sc.nextLine();
 
-                    if (kolom < 1 || baris <1 || baris > penonton.length || kolom > penonton[0].length) {
+                    if (kolom < 1 || baris < 1 || baris > penonton.length || kolom > penonton[0].length) {
                         System.out.println("Baris/Kolom kursi tidak tersedia");
                         System.out.print("masukkan baris: ");
                         baris = sc.nextInt();
                         System.out.print("Masukkan kolom: ");
                         kolom = sc.nextInt();
+                    } else if (penonton[baris - 1][kolom - 1] != null) {
+                        System.out.println("Kursi sudah terisi");
+                        continue;
                     }
-                    sc.nextLine();
+                   
 
                     penonton[baris - 1][kolom - 1] = nama;
 
